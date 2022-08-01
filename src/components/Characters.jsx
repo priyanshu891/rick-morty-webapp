@@ -38,7 +38,6 @@ const Characters = ({ filter }) => {
   if (error) return <p>{error.message}</p>;
 
   const handleChange = (e, p) => {
-    console.log(p);
     setPage(p);
   };
 
