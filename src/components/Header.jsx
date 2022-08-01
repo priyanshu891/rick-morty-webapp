@@ -98,7 +98,6 @@ const Header = ({ setFilter }) => {
               inputProps={{ "aria-label": "search" }}
               onChange={(e) => changeHandler(e.target.value)}
               onKeyDown={checkForEnter}
-              clea
             />
           </Search>
         </Toolbar>
