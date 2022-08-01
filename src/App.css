@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+.App{
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.character-card::before {
+  position: absolute;
+  top: 2rem;
+  right: -0.5rem;
+  content: "";
+  background: #283593;
+  height: 28px;
+  width: 28px;
+  transform: rotate(45deg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.character-card::after {
+  position: absolute;
+  content: attr(data-label);
+  top: 11px;
+  right: -14px;
+  padding: 0.5rem;
+  width: 10rem;
+  background: #3949ab;
   color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes twinkle {
+  50% {
+    opacity: 0;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.indicator {
+  background-color: #f5222d;
+  border-radius: 50%;
+  height: 16px;
+  margin-right: 0.5rem;
+  width: 16px;
+}
+
+.indicator--alive {
+  -webkit-animation: twinkle 1s ease-in-out infinite normal;
+  animation: twinkle 1s ease-in-out infinite normal;
+  background-color: #52c41a;
+}
+
+.indicator--unknown {
+  background-color: #f9a608;
 }
